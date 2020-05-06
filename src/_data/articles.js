@@ -5,7 +5,7 @@ require('dotenv').config();
 
 
 // Make a request for a user with a given ID
-module.exports = axios.get(('http://localhost:1337/articles'),{
+module.exports = axios.get(('https://strapi-blog-clash-2.herokuapp.com/articles'),{
   headers: {
     Authorization: process.env.JWT
   },
@@ -17,7 +17,7 @@ module.exports = axios.get(('http://localhost:1337/articles'),{
     response.data.forEach(function(data){
       var artObj = {
         name: data.title,
-        author: data.author.username,
+        author: data.user.username,
         content: converter.makeHtml(data.content),
         image: data.image.url,
         id: data.id
