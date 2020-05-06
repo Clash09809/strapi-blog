@@ -4,11 +4,12 @@ pagination:
     data: articles
     size: 1
     alias: article
-permalink: /<%=article.id%>/index.html
+permalink: /<%=article.name%>/index.html
 ---
 
 
 <h1><%=article.author%></h1>
       <h2><%=article.name%></h2>
       <p><%-article.content%></p>
+      <img src="<%=article.image%>" alt="">
       

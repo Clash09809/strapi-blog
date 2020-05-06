@@ -14,23 +14,27 @@ module.exports = axios.get((hostURL),{
   .then(function (response) {
     // handle success
     // return response.data;
+    
     var articlesArray = [];
     response.data.forEach(function(data){
       var artObj = {
         name: data.title,
         author: data.user.username,
         content: converter.makeHtml(data.content),
-        // image: hostURL+ "/" + data.image.url,
+        image: data.image.url,
         id: data.id
       };
       articlesArray.push(artObj);
     });
     return articlesArray;
+
     
   })
   .catch(function (error) {
     // handle error
     console.log(error);
   })
+
+
   
  

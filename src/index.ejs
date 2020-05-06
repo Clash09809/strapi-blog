@@ -9,11 +9,11 @@ pagination:
 
 <%articles.forEach(function(article){%>
 
-    <a href="/<%=article.id%>">
+    <a href="/<%=article.name%>">
       <h1><%=article.author%></h1>
       <h2><%=article.name%></h2>
       <p><%-article.content%></p>
-      
+      <img src="<%=article.image%>" alt="">
     </a>
   
   
