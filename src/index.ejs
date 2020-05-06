@@ -1,0 +1,21 @@
+---
+title: Index Page
+layout: base.ejs
+pagination: 
+  data: articles
+  size: 3
+  alias: articles
+---
+
+<%articles.forEach(function(article){%>
+
+    <a href="/<%=article.id%>">
+      <h1><%=article.author%></h1>
+      <h2><%=article.name%></h2>
+      <p><%-article.content%></p>
+      <img src="http://localhost:1337<%=article.image%>" alt="">
+    </a>
+  
+  
+<%})%>
+
