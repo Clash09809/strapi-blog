@@ -7,7 +7,7 @@ require('dotenv').config();
 // Make a request for a user with a given ID
 module.exports = axios.get(('http://localhost:1337/articles'),{
   headers: {
-    Authorization: process.env.API_KEY
+    Authorization: process.env.JWT
   },
 })
   .then(function (response) {
