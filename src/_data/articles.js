@@ -2,10 +2,11 @@ const axios = require('axios');
 const showdown = require('showdown');
 const converter = new showdown.Converter();
 require('dotenv').config();
+var hostURL = 'https://strapi-blog-clash-2.herokuapp.com/articles/';
 
 
 // Make a request for a user with a given ID
-module.exports = axios.get(('https://strapi-blog-clash-2.herokuapp.com/articles'),{
+module.exports = axios.get((hostURL),{
   headers: {
     Authorization: process.env.JWT
   },
@@ -19,7 +20,7 @@ module.exports = axios.get(('https://strapi-blog-clash-2.herokuapp.com/articles'
         name: data.title,
         author: data.user.username,
         content: converter.makeHtml(data.content),
-        image: data.image.url,
+        // image: hostURL+ "/" + data.image.url,
         id: data.id
       };
       articlesArray.push(artObj);
